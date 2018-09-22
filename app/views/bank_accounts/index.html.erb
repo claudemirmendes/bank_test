@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">Contas Bancárias</h1>
+<div class="topnav topnav table">
+  <div class="btn pull-right">
+    <a align="right" type="button" class="btn btn-secondary btn-sm">
+      <%= link_to 'Sair', destroy_user_session_path, method: :delete, data: { confirm: 'Realmente deseja sair ?' } %>
+    </a>
+  </div>
+  <div>
+    <a href="/"class="nav-link">Voltar para o Início</a>
+  </div>      
+</div>
+<table class="table table-striped table-dark">
+  <thead class="thead-dark"> 
+    <tr>
+      <th>Numero da agência</th>
+      <th>Limite Disponivel</th>
+      <th>Saldo</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+</body>
+
+  <tbody>
+    <% @bank_accounts.each do |bank_account| %>
+      <tr>
+        <td><%= bank_account.bank_id %></td>
+        <td><%= bank_account.limit %></td>
+        <td><%= bank_account.balance %></td>
+        <td><%= link_to 'Edit', edit_bank_account_path(bank_account) %></td>
+        <td><%= link_to 'Destroy', bank_account, method: :delete, data: { confirm: 'Deseja mesmo deletar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<button type="button" class="btn btn-primary"><%= link_to 'Cadastrar nova Conta', new_bank_account_path %></button>

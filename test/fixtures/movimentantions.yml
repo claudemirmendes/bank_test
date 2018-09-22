@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bank_account_id: 1
+  movimentation_date: 2018-09-18
+  value: 1
+  movimentation_type: 1
+  user_id: 1
+
+two:
+  bank_account_id: 1
+  movimentation_date: 2018-09-18
+  value: 1
+  movimentation_type: 1
+  user_id: 1

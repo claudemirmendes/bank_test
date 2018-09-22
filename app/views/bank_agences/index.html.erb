@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">Agências bancárias</h1>
+<div class="topnav topnav table">
+  <div class="btn pull-right">
+    <a align="right" type="button" class="btn btn-secondary btn-sm">
+      <%= link_to 'Sair', destroy_user_session_path, method: :delete, data: { confirm: 'Realmente deseja sair ?' } %>
+    </a>
+  </div>
+  <div>
+    <a href="/"class="nav-link">Voltar para o Início</a>
+  </div>      
+</div>
+<table class="table table-striped table-dark">
+  <thead class="thead-dark"> 
+    <tr>
+      <th>Numero da agência</th>
+      <th>Endereço</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+</body>
+
+  <tbody>
+    <% @bank_agences.each do |bank_agence| %>
+      <tr>
+        <td><%= bank_agence.agence %></td>
+        <td><%= bank_agence.address %></td>
+        <td><%= link_to 'Editar Agência', edit_bank_agence_path(bank_agence) %></td>
+        <td><%= link_to 'Deletar Agência', bank_agence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<button type="button" class="btn btn-primary"><%= link_to 'Cadastrar nova agência', new_bank_agence_path %></button>
+

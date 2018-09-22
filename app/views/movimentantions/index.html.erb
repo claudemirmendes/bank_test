@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movimentantions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bank account</th>
+      <th>Movimentation date</th>
+      <th>Value</th>
+      <th>Movimentation type</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movimentantions.each do |movimentantion| %>
+      <tr>
+        <td><%= movimentantion.bank_account_id %></td>
+        <td><%= movimentantion.movimentation_date %></td>
+        <td><%= movimentantion.value %></td>
+        <td><%= movimentantion.movimentation_type %></td>
+        <td><%= movimentantion.user_id %></td>
+        <td><%= link_to 'Show', movimentantion %></td>
+        <td><%= link_to 'Edit', edit_movimentantion_path(movimentantion) %></td>
+        <td><%= link_to 'Destroy', movimentantion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Movimentantion', new_movimentantion_path %>

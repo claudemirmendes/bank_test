@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bank account:</strong>
+  <%= @movimentantion.bank_account_id %>
+</p>
+
+<p>
+  <strong>Movimentation date:</strong>
+  <%= @movimentantion.movimentation_date %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @movimentantion.value %>
+</p>
+
+<p>
+  <strong>Movimentation type:</strong>
+  <%= @movimentantion.movimentation_type %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @movimentantion.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_movimentantion_path(@movimentantion) %> |
+<%= link_to 'Back', movimentantions_path %>

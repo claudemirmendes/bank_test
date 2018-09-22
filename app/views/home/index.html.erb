@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Veganizze</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body ng-app="App" ng-controller="BankAgenceCtrl">
+  <div >
+            <div class="topnav table">
+              <div class="btn pull-right">
+                <a align="right" type="button" class="btn btn-secondary btn-sm">
+                  <%= link_to 'Sair', destroy_user_session_path, method: :delete, data: { confirm: 'Realmente deseja sair ?' } %>
+                </a>
+              </div>
+              <div>
+                
+              </div>
+              <div>
+                 <a class="nav-link"><%= link_to 'Agências', bank_agences_path, method: :get %></a>
+              </div>
+              <div>
+                <a class="nav-link"><%= link_to 'Contas', bank_accounts_path, method: :get %></a>
+              </div>
+              <div>
+                <a class="nav-link"><%= link_to 'Movimentações', movimentantions_path, method: :get %></a>
+              </div>            
+            </div>
+          </div>
+</body>
+</html>
